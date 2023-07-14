@@ -46,7 +46,7 @@ Use the `BLANK_README.md` to get started.
 
 Aqui podran ver las tecnologias utilizadas.
 
-* [![React][React.js]][React-url]
+* React
 * Vite
 * Supabase
 * Tailwindcss
@@ -66,10 +66,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/ArecheBrian/PruebaTecnica.git
    ```
@@ -121,12 +118,13 @@ Información de lo no realizado.
 Primer Bloque
 
 1) Realizar maquetación del diseño suministrado y tomar en cuenta:
-   
+      <br/>
   d) El campo fecha de vencimiento debe tener formato mm/yy.
   e) El campo fecha solo puede aceptar valores válidos para mes (01 a 12) y año (22
   hasta año actual + 5).
 
 2) Al pulsar botón de Agregar tarjeta.
+      <br/>
   a) Debe agregar la tarjeta a un bloque en el cual se mostrarán los campos de
   tarjeta, nombre y fecha vencimiento.
   d) El campo de número de tarjeta se debe mostrar enmascarado, solo mostrar los12 primeros y 4 últimos dígitos (ej. 41********1234).
@@ -134,12 +132,13 @@ Primer Bloque
 Segunda Bloque
 
 1) Crear RESTful API para el procesamiento de agregado/visualización de tarjetas.
-   
+<br/>
   a) Debe contener todos los métodos de CRUD. (aunque no los use todos)
   b) Puede utilizar cualquier Web API de su preferencia (ej. Firebase, ASP.Net Core o MVC 5 en local host, Express, etc.)
   c) Para la prueba no se tomará en cuenta ningún mecanismo de autenticación.
   
 2) Conectar el primer bloque con el segundo bloque.
+   <br/>
   a) Al momento de agregar tarjeta esta debe ser almacenada en alguna base de datos o archivo de texto (ej. Firebase).
   b) Lo único que se debe validar al momento de agregar es que los campos requeridos sean enviados.
   c) Los API deben de devolver correctamente respuestas HTTP para cada caso, (ej. 404, 500, 302, 200, etc).
