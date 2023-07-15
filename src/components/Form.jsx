@@ -1,15 +1,12 @@
 import React, { useState } from 'react'
 import { LuNfc } from "react-icons/lu";
-import Chip from "../assets/chip.png"
-import Logo1 from "../assets/Mastercard.png"
-import Logo2 from "../assets/Visa.png"
-import Logo3 from "../assets/American.svg.png"
 import { motion } from 'framer-motion';
 import { UploadCards } from '../supabase/uploadCard';
+import Image from "../assets/index"
 
 export const Form = () => {
 
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false); //voltear tarjeta 
   const [tipoTarjeta, setTipoTarjeta] = useState('Desconocido');
   const [errors, setErrors] = useState({});
   const [data, setData] = useState({
@@ -35,7 +32,9 @@ export const Form = () => {
   const handleChange = (e) => {
     
     const { name, value } = e.target;
-    const formattedValue = value.replace(/\d{4}(?=\d)/g, '$& ');
+
+    const formattedValue = value.replace(/\d{4}(?=\d)/g, '$& '); //agregar espacio cada 4 numero en el campo Numero
+    // Identificar cuando se debe voltear la tarjeta 
     if(name == "CVV"){
       setIsFlipped(true)
     }else{
@@ -127,7 +126,7 @@ export const Form = () => {
                             <LuNfc className='text-slate-400  sm:text-[2.5rem] text-2xl absolute end-0 self-center'/>
                         </div>
                         <div className='flex justify-between pe-5 sm:mt-3 mt-1'>
-                            <img src={Chip} className=' sm:h-14 h-10 mb-1'/>
+                            <img src={Image.Chip} className=' sm:h-14 h-10 mb-1'/>
                             <span className=' text-slate-400 sm:text-[1.2rem] text-xs self-end'>world</span>
                         </div>
                     </div>
@@ -143,7 +142,7 @@ export const Form = () => {
                             <p className='text-slate-400 sm:text-2xl text-sm uppercase' style={{letterSpacing:"1px"}}>{data.Nombre? data.Nombre : "YOUR NAME"}</p>
                         </div>
                         {
-                            tipoTarjeta == 'American Express'? <img src={Logo3} className='sm:h-16 h-10 self-center'/> :( tipoTarjeta == "Visa"? <img src={Logo2} className=' sm:h-10 h-6 self-center'/> : (tipoTarjeta == "Mastercard")? <img src={Logo1} className=' sm:h-16 h-10 self-center'/>: <div className='sm:h-16 h-10'></div>) 
+                            tipoTarjeta == 'American Express'? <img src={Image.American} className='sm:h-16 h-10 self-center'/> :( tipoTarjeta == "Visa"? <img src={Image.Visa} className=' sm:h-10 h-6 self-center'/> : (tipoTarjeta == "Mastercard")? <img src={Image.Mastercard} className=' sm:h-16 h-10 self-center'/>: <div className='sm:h-16 h-10'></div>) 
                         }    
                     </div>
                     </motion.div>

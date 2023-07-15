@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getCards } from "../../supabase/getCards";
 
-
 export const fetchCards = createAsyncThunk(
     "Prueba/Cards",
     async() => {

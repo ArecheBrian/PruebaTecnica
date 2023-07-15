@@ -1,10 +1,6 @@
 import React from 'react'
 import { LuNfc } from "react-icons/lu";
-import Chip from "../assets/chip.png";
-import Logo1 from "../assets/Mastercard.png"
-import Logo2 from "../assets/Visa.png"
-import Logo3 from "../assets/American.svg.png"
-import { DeleteCard } from '../supabase/deleteCards';
+import Image from "../assets/index"
 
 export const Cards = ({Nombre, Numero, Fecha, Tipo}) => {
     function ocultarDigitos(numero) {
@@ -25,7 +21,7 @@ export const Cards = ({Nombre, Numero, Fecha, Tipo}) => {
                 <LuNfc className='text-slate-400  sm:text-[2.5rem] text-2xl absolute end-0 self-center'/>
             </div>
             <div className='flex justify-between pe-5 sm:mt-3 mt-1 '>
-                <img src={Chip} className=' sm:h-14 h-10 mb-1'/>
+                <img src={Image.Chip} className=' sm:h-14 h-10 mb-1'/>
                 <span className=' text-slate-400 sm:text-[1.2rem] text-xs self-end'>world</span>
             </div>
             <div className='text-slate-400 sm:text-2xl text-sm w-full flex justify-center items-end ' style={{letterSpacing:"5px", wordSpacing: "15px"}}>{numeroOculto}</div>
@@ -40,7 +36,7 @@ export const Cards = ({Nombre, Numero, Fecha, Tipo}) => {
                     <p className='text-slate-400 sm:text-2xl text-sm uppercase' style={{letterSpacing:"1px"}}>{Nombre}</p>
                 </div>
                 {
-                    Tipo == "Mastercard"? <img src={Logo1} className=' sm:h-16 h-10 self-center'/>:(Tipo == "Visa"? <img src={Logo2} className=' sm:h-10 h-6 self-center'/> : <img src={Logo3} className='sm:h-16 h-10 self-center'/>)
+                    Tipo == "Mastercard"? <img src={Image.Mastercard} className=' sm:h-16 h-10 self-center'/>:(Tipo == "Visa"? <img src={Image.Visa} className=' sm:h-10 h-6 self-center'/> : <img src={Image.American} className='sm:h-16 h-10 self-center'/>)
                 }
             </div>
         </div>

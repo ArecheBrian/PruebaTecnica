@@ -11,7 +11,7 @@ export const Wallet = () => {
   useEffect(()=>{
     dispatch(fetchCards())
   },[])
-  console.log(state)
+  
   return (
     <div className='w-[100vw] flex flex-col items-center'>
       <Nav/>
