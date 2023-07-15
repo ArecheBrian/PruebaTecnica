@@ -25,7 +25,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li href="#finished"><a>Finished</a></li>
+    <li><a href="#finished">Finished</a></li>
     <li><a href="#To Do">To Do</a></li>
   </ol>
 </details>
@@ -57,12 +57,11 @@ Aqui podran ver las tecnologias utilizadas.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Este es un ejemplo de cómo puede dar instrucciones sobre cómo configurar su proyecto localmente. Para obtener una copia local en funcionamiento, siga estos sencillos pasos de ejemplo.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+Este es un ejemplo de cómo enumerar las cosas que necesita para usar el software y cómo instalarlas.
 
 ### Installation
 
