@@ -1,5 +1,6 @@
 import { supabase } from "../../lib/supabase";
 
+// esta funcion guarda datos
 export const UploadCards = async (data) => {
     try {
         const res = await supabase.from("CreditCard").insert(data).select();

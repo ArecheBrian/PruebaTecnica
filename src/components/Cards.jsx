@@ -4,6 +4,7 @@ import Chip from "../assets/chip.png";
 import Logo1 from "../assets/Mastercard.png"
 import Logo2 from "../assets/Visa.png"
 import Logo3 from "../assets/American.svg.png"
+import { DeleteCard } from '../supabase/deleteCards';
 
 export const Cards = ({Nombre, Numero, Fecha, Tipo}) => {
     function ocultarDigitos(numero) {
@@ -14,9 +15,9 @@ export const Cards = ({Nombre, Numero, Fecha, Tipo}) => {
         return primerosDigitos + digitosOcultos + ultimosDigitos;
     }
     const numeroOculto = ocultarDigitos(Numero);
+
   return (
-    <div className='flex flex-col'>
-        <div className=' bg-slate-950 sm:w-[520px] w-[390px] sm:h-[310px] h-[230px] rounded-lg flex flex-col justify-between p-8'>
+        <div className='sm:w-[520px] w-[390px] sm:h-[310px] h-[230px] rounded-lg flex flex-col justify-between p-8 bg-slate-900'>
             <div className='flex relative items-center gap-4 '>
                 <h2 className='text-white sm:text-[2rem] text-sm font-bold'>monobank</h2>
                 <hr className=' sm:h-8 h-6 w-[1.5px] bg-slate-400'/>                     
@@ -42,11 +43,6 @@ export const Cards = ({Nombre, Numero, Fecha, Tipo}) => {
                     Tipo == "Mastercard"? <img src={Logo1} className=' sm:h-16 h-10 self-center'/>:(Tipo == "Visa"? <img src={Logo2} className=' sm:h-10 h-6 self-center'/> : <img src={Logo3} className='sm:h-16 h-10 self-center'/>)
                 }
             </div>
-            </div>
-        <div className='pl-3'>
-            <span className=''>Editar</span>
-            <span className='ml-4'>Eliminar</span>
         </div>
-    </div>
   )
 }
